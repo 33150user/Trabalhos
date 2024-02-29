@@ -49,6 +49,7 @@ int main(){
     if(count==0)
         printf("\n\tNão foram encontrados automóveis para o preço da pesquisa.");
 
+    fflush(stdin);
     // solicitar ao utilizador a marca para a pesquisa
     printf("\n\nIntroduza a marca para a pesquisa: ");
     gets(marca);
