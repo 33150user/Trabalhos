@@ -38,32 +38,31 @@ int main(){
     printf("\nIntroduza o preço para a pesquisa: ");
     scanf("%f",&preco);
 
-    for(i=0;i<N_AUTOMOVEIS;i++){ // apresentar marca modelo cor e ano
+    for(i=0;i<N_AUTOMOVEIS;i++) // apresentar marca modelo cor e ano
         if(stand[i].preco<=preco){
          printf("\n\tMarca: %s",stand[i].marca);
          printf("\n\tModelo: %s",stand[i].modelo);
          printf("\n\tCor: %s",stand[i].cor);
-         printf("\n\tAno: %d",stand[i].ano);
+         printf("\n\tAno: %d\n----",stand[i].ano);
         }
-    printf("\n----");
-    }
+    if(count==0)
+        printf("\nNão foram encontrados automóveis para o preço da pesquisa.");
 
     // solicitar ao utilizador a marca para a pesquisa
     printf("\nIntroduza a marca para a pesquisa: ");
     gets(marca);
-
+    count=0;
     // pesquisa todos os automóveis para encontrar os que são
     // da marca da pesquisa.
-    for(i=0;i<N_AUTOMOVEIS;i++){
+    for(i=0;i<N_AUTOMOVEIS;i++)
         if(strcmp(stand[i].marca,marca)==0){ // se a função devolver 0, as strings são iguais
             printf("\n\tMatrícula: %s",stand[i].matricula);
             printf("\n\tModelo: %s",stand[i].modelo);
             printf("\n\tCor: %s",stand[i].cor);
             printf("\n\tAno: %s",stand[i].ano);
-            printf("\n\tPreço: %.2f",stand[i].preco);
+            printf("\n\tPreço: %.2f\n----",stand[i].preco);
+            count++;
         }
-        printf("\n----");
-    }
 
     // solicitar ao utilizador o ano e a cor para a pesquisa
     printf("\nIntroduza o ano para a pesquisa: ");
@@ -73,13 +72,11 @@ int main(){
 
     // pesquisa todos os automóveis para encontrar os que são
     // do ano e cor da pesquisa.
-    for(i=0;i<N_AUTOMOVEIS;i++){
+    for(i=0;i<N_AUTOMOVEIS;i++)
         if(stand[i].ano==ano && strcmp(stand[i].cor,cor)==0){
-            printf("\nPreço: %.2f",stand[i].preco);
+            printf("\nPreço: %.2f\n----",stand[i].preco);
             count++;
         }
-        printf("\n----");
-    }
 
     // verificar se foram encontrados automóveis com o ano e
     // cor da pesquisa.
