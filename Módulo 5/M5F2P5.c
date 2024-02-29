@@ -44,12 +44,13 @@ int main(){
          printf("\n\tModelo: %s",stand[i].modelo);
          printf("\n\tCor: %s",stand[i].cor);
          printf("\n\tAno: %d\n----",stand[i].ano);
+         count++;
         }
     if(count==0)
-        printf("\nNão foram encontrados automóveis para o preço da pesquisa.");
+        printf("\n\tNão foram encontrados automóveis para o preço da pesquisa.");
 
     // solicitar ao utilizador a marca para a pesquisa
-    printf("\nIntroduza a marca para a pesquisa: ");
+    printf("\n\nIntroduza a marca para a pesquisa: ");
     gets(marca);
     count=0;
     // pesquisa todos os automóveis para encontrar os que são
@@ -65,11 +66,11 @@ int main(){
         }
 
     // solicitar ao utilizador o ano e a cor para a pesquisa
-    printf("\nIntroduza o ano para a pesquisa: ");
+    printf("\n\nIntroduza o ano para a pesquisa: ");
     scanf("%d",&ano);
     printf("\nIntroduza a cor para a pesquisa: ");
     gets(cor);
-
+    count=0;
     // pesquisa todos os automóveis para encontrar os que são
     // do ano e cor da pesquisa.
     for(i=0;i<N_AUTOMOVEIS;i++)
