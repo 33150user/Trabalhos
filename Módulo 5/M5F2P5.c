@@ -3,7 +3,7 @@
 #include<locale.h>
 #include<string.h>
 
-#define N_AUTOMOVEIS 3
+#define N_AUTOMOVEIS 20
 
 typedef struct{
     char matricula[7];
@@ -24,12 +24,12 @@ int main(){
 
     printf("Introduza as seguintes informações:\n");
     for(i=0;i<N_AUTOMOVEIS;i++){
-        printf("A matrícula do %d.º carro: ",i++);
-        gets(stand[i].matricula);
+        printf("A matrícula do %d.º carro: ",i+1);
+        fgets(stand[i].matricula, 7, stdin);
         printf("A marca do carro: ");
-        gets(stand[i].marca);
+        fgets(stand[i].marca, 11, stdin);
         printf("O modelo: ");
-        gets(stand[i].modelo);
+        fgets(stand[i].modelo, 21, stdin);
         printf("O ano do carro: ");
         scanf("%d",&stand[i].ano);
         printf("O preço do automóvel: ");
@@ -52,7 +52,7 @@ int main(){
     fflush(stdin);
     // solicitar ao utilizador a marca para a pesquisa
     printf("\n\nIntroduza a marca para a pesquisa: ");
-    gets(marca);
+    fgets(marca, 15, stdin);
     count=0;
     // pesquisa todos os automóveis para encontrar os que são
     // da marca da pesquisa.
@@ -70,7 +70,7 @@ int main(){
     printf("\n\nIntroduza o ano para a pesquisa: ");
     scanf("%d",&ano);
     printf("\nIntroduza a cor para a pesquisa: ");
-    gets(cor);
+    fgets(cor, 15, stdin);
     count=0;
     // pesquisa todos os automóveis para encontrar os que são
     // do ano e cor da pesquisa.
