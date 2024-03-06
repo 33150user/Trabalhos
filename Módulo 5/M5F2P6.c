@@ -20,7 +20,7 @@ int main(){
 
     setlocale(LC_ALL,"portuguese");
     TProduto supermercado[TAMANHO];
-    int i;
+    int i,count;
     char codigo[31];
 
     printf("Introduza as seguintes informações dos produtos: ")
