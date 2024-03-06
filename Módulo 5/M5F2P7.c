@@ -15,7 +15,7 @@ typedef struct{
 int main(){
 
     TAluno turma[N_ALUNOS]; // turma é a variável e TAluno é o tipo de dados da variável
-    int i,j;
+    int i,j,soma,max=0,i_max,min=20,i_min;
     char respostas_corretas[N_PERGUNTAS];
 
     setlocale(LC_ALL,"portuguese");
@@ -38,8 +38,33 @@ int main(){
         respostas_corretas[i]=getchar();
     }
 
-    // calcular e apresentar a cotação do teste de cada aluno
-    
+    // calcular e apresentar a cotação do teste de cada aluno e
+    // calcular a melhor e a pior classificação do melhor e do pior aluno.
+    for(i=0;i<N_ALUNOS;i++){
+        for(j=0;j<N_PERGUNTAS;j++){
+        if(turma[i].respostas[j]==respostas_corretas[j])
+            soma++; // ou soma=soma+1;
+        }
+        printf("\nCotação do aluno com o processo %d: %d valores.",turma[i].n_proc,soma);
+        if(soma>max){
+            max=soma;
+            i_max=i;
+        }
+        if(soma<min){
+            min=soma;
+            i_min=i;
+        }
+        soma=0;
+    }
 
+    // apresentar a identificação do melhor e do pior aluno
+    printf("\n\n\tAluno com a melhor classificação: %d valores",max);
+    printf("\n\tNº proc.: %d",turma[i_max].n_proc);
+    printf("\n\tNome: %s",turma[i_max].nome);
+
+    printf("\n\n\tAluno com a melhor classificação: %d valores",min);
+    printf("\n\tNº proc.: %d",turma[i_min].n_proc);
+    printf("\n\tNome: %s",turma[i_min].nome);
+    
     return 0;
 }
